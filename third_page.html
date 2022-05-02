@@ -1,0 +1,331 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>관광 안내 페이지-여행지</title>
+            <style type="text/css">
+                body.td.th {
+                    font-family:"돋움","돋움체","굴림","굴림체";
+                    font-size: 12px;
+                    color: #333;
+                }
+                body {
+                    padding:0px;
+                    margin:0px;
+                    font-size:14px;
+                }
+                a:link {
+                    text-decoration:none;
+                    font-weight:bold;
+                }
+                a:visited {
+                    text-decoration:none;
+                    color:#333;
+                }
+                a:hover {
+                    text-decoration:none;
+                    color:#333;
+                }
+                a:active {
+                    text-decoration:none;
+                    color:#333;
+                }
+                a {
+                    font-family:"돋움","돋움체","굴림","굴림체";
+                    font-size: 12px;
+                    color: #333;
+                }
+                /*레이아웃 영역*/
+                #layout {
+                    padding:0px;
+                    width:480px;
+                    height:1190px;
+                    background-color:#fff;
+                    margin:0px auto;
+                    border:1px solid black;
+                }
+                /*상단바*/
+                .box_top {
+                    background-color:#2a80b9;
+                    padding:0px;
+                    float:left;
+                    height:20px;
+                    width:480px;
+                    margin-right:0px;
+                }
+                /*상단바 아이콘*/
+                .img_bar1 {
+                    float:left;
+                    padding:0px;
+                    margin:0px;
+                    width:20px;
+                }
+                .img_bar2 {
+                    float:left;
+                    padding:0px;
+                    margin:0px;
+                    width:20px;
+                }
+                .img_bar3 {
+                    float:right;
+                    padding:0px;
+                    margin:0px;
+                    width:20px;
+                }
+                .img_bar4 {
+                    padding:0px;
+                    margin-left:160px;
+                    height:20px;
+                }
+                /*타이틀 영역*/
+                .box_title {
+                    background-color:#2a80b9;
+                    padding:0px;
+                    float:left;
+                    height:64px;
+                    width:480px;
+                    margin-right:0px;
+                }
+                /*타이틀 텍스트*/
+                .title_text {
+                    float:left;
+                    margin-left:10px;
+                    font-size: 22px;
+                    line-height:64px;
+                    color:#fff;
+                }
+                /*타이틀 아이콘*/
+                .img_title {
+                    float:left;
+                    padding:0px;
+                    width:30px;
+                    margin-left:10px;
+                    margin-top:17px;
+                }
+                .img_title2 {
+                    float:right;
+                    padding:0px;
+                    width:30px;
+                    margin-right:10px;
+                    margin-top:17px;
+                }
+                /*메뉴 영역*/
+                .box_menu {
+                    background-color:#2a80b9;
+                    padding:0px;
+                    float:left;
+                    height:64px;
+                    width:480px;
+                    margin-right:0px;
+                }
+                /*메뉴 목록*/
+                ul {
+                    list-style:none;
+                    text-align:center;
+                    padding:0px;
+                }
+                ul li {
+                    display:inline;
+                    margin-left:10px;
+                    padding: 0px 36px;
+                    letter-spacing:3px;
+                    color:#fff;
+                    font-size:16px;
+                }
+                /*선택된 메뉴*/
+                .box_click {
+                    background-color:#fff;
+                    padding:0px;
+                    margin-left:0px;
+                    margin-top:24px;
+                    height:8px;
+                    width:160px;
+                }
+                /*바디 영역*/
+                .box_body {
+                    background-color:#fff;
+                    padding:0px;
+                    width:480px;
+                    height:800px;
+                    margin:0px;
+                    float:left;
+                }
+                /*접고 피는 목록*/
+                .collapsible {
+                    background-color: #fff;
+                    cursor: pointer;
+                    padding: 18px;
+                    width: 100%;
+                    border-top:none;
+                    border-left:none;
+                    border-right:none;
+                    border-bottom: 1px solid black;
+                    line-height:30px;
+                    outline: none;
+                }
+                /*접고 피는 목록 효과*/
+                .active, .collapsible:hover {
+                    background-color: #f1f1f1;
+                }
+                /*접고 피는 목록 아이콘*/
+                .img_icon {
+                    float:left;
+                    padding:10px;
+                    height:20px;
+                    margin-top:8px;
+                }
+                .img_icon2 {
+                    float:right;
+                    padding:0px;
+                    height:24px;
+                    margin-top:-30px;
+                    margin-right:6px;
+                }
+                /*접고 피는 목록 텍스트*/
+                .text_01 {
+                    color: #000;
+                    text-align: left;
+                    font-size: 17px;
+                    padding:0px;
+                    margin-top:14px;
+                    margin-left:20px;
+                }
+                /*목록 속 내용*/
+                .content {
+                    padding: 0px;
+                    border-bottom:1px solid black;
+                    display: none;
+                    overflow: hidden;
+                    background-color: #fff;
+                }
+                /*목록 속 목록*/
+                .collapsible2 {
+                    background-color: #fff;
+                    padding: 18px;
+                    width: 100%;
+                    border-top:none;
+                    border-left:none;
+                    border-right:none;
+                    border-bottom: 1px solid black;
+                    line-height:30px;
+                    outline: none;
+                }
+                .img_content {
+                    float:left;
+                    width:120px;
+                    padding:0px;
+                    margin:0px;
+                }
+                .text_content {
+                    padding:0px;
+                    margin-top:10px;
+                    margin-left:20px;
+                    float:left;
+                    font-weight:bold;
+                    font-size:16px;
+                    color:#000;
+                }
+                .content2 {
+                    float:left;
+                    color:#000;
+                    margin-left:140px;
+                    margin-top:-70px;
+                    padding: 0px;
+                    font-size:14px;
+                }
+            </style>
+    </head>
+<body>
+    <!--전체 레이아웃-->
+    <div id="layout">
+        <!--header 영역 시작-->
+        <div class="box_top">
+            <img src="상태바아이콘5.png" alt="상태바아이콘" class="img_bar1">
+            <img src="상태바아이콘6.png" alt="상태바아이콘" class="img_bar2">
+            <img src="상태바아이콘8.png" alt="상태바아이콘" class="img_bar3">
+            <img src="상태바아이콘7.png" alt="상태바아이콘" class="img_bar4">
+        </div>
+        <div class="box_title">
+            <img src="메뉴아이콘.png" alt="메뉴아이콘" class="img_title2">
+            <a href="main_page.html">
+            <img src="뒤로가기아이콘.png" alt="뒤로가기아이콘" class="img_title"></a>
+            <div class="title_text">관광 안내</div>
+        </div>
+        <div class="box_menu">
+            <ul>
+                <a href="third_page.html"><li>여행지</li></a>
+                <a href="fourth_page.html"><li>특가상품</li></a>
+                <a href="fifth_page.html"><li>관광지도</li></a>
+            </ul>
+            <div class="box_click"></div>
+        </div>
+        <!--content 영역 시작-->
+        <div class="box_body">
+            <button type="button" class="collapsible">
+                <img src="인기여행지아이콘.png" alt="인기여행지아이콘" class="img_icon">
+                <div class="text_01">인기 여행지</div>
+                <img src="펼치기아이콘.png" alt="펼치기아이콘" class="img_icon2">
+            </button>
+            <div class="content">
+                <button type="button" class="collapsible2">
+                    <img src="경주.png" alt="경주" class="img_content">
+                    <div class="text_content">[경북] 경주, 추억의 여행</div>
+                    <div class="content2">천년의 역사가 깃든 경주! 신라 시대 역사가 살아 숨쉬고 학창시절 기억 속의 그 장소로 떠나보는</div>
+                </button>
+                <button type="button" class="collapsible2">
+                    <img src="동해.jpg" alt="동해" class="img_content">
+                    <div class="text_content">[강원] 동해로 떠나는 낭만 여행</div>
+                    <div class="content2">추암~정동진까지의 바다열차! 탁 트인 바다와 함께 커피향이 가득한 안목 커피거리까지 맛보는</div>
+                </button>
+                <button type="button" class="collapsible2">
+                    <img src="수원화성.jpg" alt="수원화성" class="img_content">
+                    <div class="text_content">[수원] 수원 화성</div>
+                    <div class="content2">성곽문화의 정점, 수원 화성 동북각루, 방화수류정의 야경모습까지 수원 시내에 자리잡은 문화</div>
+                </button>
+                
+            </div>
+            <button type="button" class="collapsible">
+                <img src="숨은여행지아이콘.png" alt="숨은여행지아이콘" class="img_icon">
+                <div class="text_01">숨은 여행지</div>
+                <img src="펼치기아이콘.png" alt="펼치기아이콘" class="img_icon2">
+            </button>
+            <div class="content">
+                <button type="button" class="collapsible2">
+                    <img src="가로수길.jpg" alt="가로수길" class="img_content">
+                    <div class="text_content">[서울] 신사동 가로수길</div>
+                    <div class="content2">서울 속 숨은 맛집을 찾아라! 연인과 가로수길을 걸으며 티비 속 맛집 탐방까지 쇼핑과 어우러진</div>
+                </button>
+            </div>
+            <button type="button" class="collapsible">
+                <img src="힐링여행지아이콘.png" alt="힐링여행지아이콘" class="img_icon">
+                <div class="text_01">힐링 여행지</div>
+                <img src="펼치기아이콘.png" alt="펼치기아이콘" class="img_icon2">
+            </button>
+            <div class="content">
+                <button type="button" class="collapsible2">
+                    <img src="군산.png" alt="군산" class="img_content">
+                    <div class="text_content">군산-전주 힐링 여행</div>
+                    <div class="content2">전주 한옥마을을 비롯해 군산 근대문화거리, 아날로그 감성을 느낄 수 있는 힐링 여행! 가족과 함께</div>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!--접고 피는 효과-->
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                content.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
